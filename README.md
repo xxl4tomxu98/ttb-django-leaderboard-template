@@ -23,6 +23,7 @@ Requirements
 
 Python leaderboards module `pip install leaderboard`, note that this module will install redis and hiredis modules as its dependancy
 djangorestframework `pip install djangorestframework` for providing the rest behavior.
+`pip freeze > requirements.txt` to save all dependency requirements into a text file.
 
 Usage
 -----
