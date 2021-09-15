@@ -1,45 +1,33 @@
-django-leaderboard
-==================
+django-leaderboard-template
+===========================
 
-A Django leaderboard (scoreboard) app, using redis as its backend. This app is a wrapper for the python-leaderboard api https://github.com/agoragames/python-leaderboard
+A Django leaderboard app template, using redis as its backend. This app is a wrapper for the python-leaderboard api `https://github.com/agoragames/leaderboard-python`
 
-The app uses Redis KVS for its back-end and stores the scores on its 'sorted set' data structure, which keeps the data ordered and allows us to retrieve, update and delete scores efficiently. 
+The app uses Redis KVS for its back-end and stores the scores on its 'sorted set' data structure, which keeps the data ordered and allows us to retrieve, update and delete scores efficiently.
 
 With this app, you can get the leaderboard with pagination, create scores, update or delete them. Even get rankings around the given score.
 
 Features
 --------
 
-  * RESTful api for creating, updating, deleting and retrieving high scores or scores around the user
-  * Standard view for displaying high scores with pagination
+* RESTful api for creating, updating, deleting and retrieving high scores or scores around the user
+* Standard view for displaying high scores with pagination
 
 Not implemented features
 ------------------------
 
-  * delete method for the api
+* delete method for the api
 
 Requirements
 ------------
 
 Python leaderboards module `pip install leaderboard`, note that this module will install redis and hiredis modules as its dependancy
-djangorestframework `pip install djangorestframework` for providing the rest behavior. 
+djangorestframework `pip install djangorestframework` for providing the rest behavior.
 
-Installation
-------------
-
-  * Add the `django_leaderboard` folder to your path.
-  * Add `django_leaderboard` to APPS list in settings.py
-  * Make sure that your redis server is running.
-  * Add following lines to your urls.py file.
-  * Run `python manage.py runserver` to test it out.
-
-    url(r'^leaderboard/', include('django_leaderboard.urls')),
-    url(r'^restframework', include('djangorestframework.urls', namespace='djangorestframework')) # auth support for rest framework
-    
 Usage
 -----
 
-Thanks to `djangorestframeword`, you can just visit `http://localhost:8000/leaderboard/api/<game-identifier>/` to create, update or get the leaderboard.
+Thanks to `djangorestframework`, you can just visit `http://localhost:8000/leaderboard/api/<game-identifier>/` to create, update or get the leaderboard.
 
 Other urls are `http://localhost:8000/leaderboard/api/<game-identifier>/user/<user-id>/` for scores around the user, and `http://localhost:8000/leaderboard/api/<game-identifier>/<page-id>/` for pagination. Please see `urls.py` to see the full list or urls.
 
@@ -51,7 +39,39 @@ Example
 
 There is an example project in the source to make it easy to start.
 
-Contributions
--------------
+A sample project to try `django_leaderboard`
 
-Please feel free to contribute.
+Dependencies
+------------
+
+Please see `requirements.txt` file for the complete dependancy list.
+
+Installation
+------------
+
+Dependencies are added to the `requirements.txt` file. Usage of virtualenv is highly recommended. Please use the following steps to run this sample django project. Following steps requires using a terminal.
+
+Use following to set up the project
+
+    git clone `https://github.com/xxl4tomxu98/ttb-django-leaderboard-template/tree/master`
+    cd ./
+    python3 -m venv venv
+    source venv/bin/activate
+    pip install --upgrade pip
+    pip install wheel
+    pip install -r requirements.txt
+    cd ./samplegame
+    python manage.py makemigrations
+    python manage.py migrate      
+    python manage.py runserver     
+
+Open `settings.py` file and do the necessary changes (i.e. db settings, etc).
+
+* Add `django_leaderboard` to APPS list in settings.py
+* Make sure that your redis server is running.
+* Add following lines to your urls.py file.
+
+    url(r'^leaderboard/', include('django_leaderboard.urls')),
+    url(r'^restframework', include('djangorestframework.urls', namespace='djangorestframework')) # auth support for rest framework
+
+Go to http://localhost:8000/ to use the project. Make sure that you create some users first.
