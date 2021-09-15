@@ -1,7 +1,7 @@
 from django.http import HttpResponseRedirect
-from django.conf.urls import patterns, include, url
+from django.conf.urls import include, url
 
-urlpatterns = patterns('',
+urlpatterns = [
     # Redirect to leaderboard
     url(r'^$', lambda r : HttpResponseRedirect('leaderboard/highscores/sample_game/')),
 
@@ -9,5 +9,5 @@ urlpatterns = patterns('',
     url(r'^leaderboard/', include('django_leaderboard.urls')),
 
     # auth support for rest framework
-    url(r'^restframework', include('djangorestframework.urls', namespace='djangorestframework'))
-)
+    url(r'^restframework', include('rest_framework.urls', namespace='rest_framework'))
+]

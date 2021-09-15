@@ -1,13 +1,13 @@
-from leaderboard import Leaderboard
+from leaderboard.leaderboard import Leaderboard
 from django_leaderboard.forms import ScoreForm
 
-from djangorestframework.reverse import reverse
-from djangorestframework.views import View
-from djangorestframework.response import Response
-from djangorestframework import status
+from rest_framework.reverse import reverse
+from rest_framework.views import View
+from rest_framework.response import Response
+from rest_framework import status
 
 from django.contrib.auth.models import User
-from django.shortcuts import render_to_response
+from django.shortcuts import render
 from django.template import RequestContext
 
 def highscores(request, game, page=1):
@@ -44,7 +44,8 @@ def highscores(request, game, page=1):
     for user in users:
         score_list[user.pk]["user"] = user
 
-    return render_to_response("django_leaderboard/highscores.html", 
+    return render(request,
+            "django_leaderboard/highscores.html", 
             {
                 "scores": scores, 
                 "total_pages":total_pages, 
@@ -54,8 +55,7 @@ def highscores(request, game, page=1):
                 'has_prev': has_prev, 
                 'next_page': next_page,
                 'prev_page': prev_page,
-            }, 
-             context_instance=RequestContext(request))
+            })
 
 
 class ScoresView(View):
