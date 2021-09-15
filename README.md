@@ -54,7 +54,7 @@ Dependencies are added to the `requirements.txt` file. Usage of virtualenv is hi
 Use following to set up the project
 
     git clone `https://github.com/xxl4tomxu98/ttb-django-leaderboard-template/tree/master`
-    cd ./
+    cd ./ttb-django-leaderboard-template
     python3 -m venv venv
     source venv/bin/activate
     pip install --upgrade pip
@@ -74,4 +74,4 @@ Open `settings.py` file and do the necessary changes (i.e. db settings, etc).
     url(r'^leaderboard/', include('django_leaderboard.urls')),
     url(r'^restframework', include('djangorestframework.urls', namespace='djangorestframework')) # auth support for rest framework
 
-Go to http://localhost:8000/ to use the project. Make sure that you create some users first.
+Go to `http://localhost:8000/` to use the project. Make sure that you create some users first.
