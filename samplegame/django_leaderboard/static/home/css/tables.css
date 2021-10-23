@@ -1,0 +1,5 @@
+.disable-buttons {
+    text-align: center !important; 
+    opacity: 0.6 !important; 
+    cursor: not-allowed !important;
+}

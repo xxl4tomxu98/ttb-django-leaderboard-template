@@ -3,7 +3,7 @@ django-leaderboard-template
 
 A Django leaderboard app template, using redis as its backend. This app is a wrapper for the python-leaderboard api `https://github.com/agoragames/leaderboard-python`
 
-The app uses Redis KVS for its back-end and stores the scores on its 'sorted set' data structure, which keeps the data ordered and allows us to retrieve, update and delete scores efficiently.
+The app uses Redis key-value pairs for its back-end and stores the scores on its 'sorted set' data structure, which keeps the data ordered and allows us to retrieve, update and delete scores efficiently.
 
 With this app, you can get the leaderboard with pagination, create scores, update or delete them. Even get rankings around the given score.
 
@@ -21,9 +21,7 @@ Not implemented features
 Requirements
 ------------
 
-Python leaderboards module `pip install leaderboard`, note that this module will install redis and hiredis modules as its dependancy
-djangorestframework `pip install djangorestframework` for providing the rest behavior.
-`pip freeze > requirements.txt` to save all dependency requirements into a text file.
+Python leaderboards module `pip install leaderboard`, note that this module will install redis and hiredis modules as its dependancy djangorestframework `pip install djangorestframework` for providing the rest behavior. `pip freeze > requirements.txt` to save all dependency requirements into a text file.
 
 Usage
 -----
@@ -32,7 +30,8 @@ Thanks to `djangorestframework`, you can just visit `http://localhost:8000/leade
 
 Other urls are `http://localhost:8000/leaderboard/api/<game-identifier>/user/<user-id>/` for scores around the user, and `http://localhost:8000/leaderboard/api/<game-identifier>/<page-id>/` for pagination. Please see `urls.py` to see the full list or urls.
 
-To create new ranking using the api, send a POST request to `http://localhost:8000/leaderboard/api/<game-identifier>/`. Game identifier is the key to determine your game to the system. it can be anything. Parameters are `user_id`and `score`.  
+To create new ranking using the api, send a POST request to `http://localhost:8000/leaderboard/api/<game-identifier>/`. Game identifier is the key to determine your game to the system. it can be anything. Parameters are `user_id`and `score`.
+
 To see the html table of leaderboard, go to `http://localhost:8000/leaderboard/highscores/<game-identifier>/` page.
 
 Example
