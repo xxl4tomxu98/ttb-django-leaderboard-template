@@ -3,5 +3,7 @@
 *.pyc
 local_settings.py
 .DS_Store
+.env
 venv
 *.sql
+__pycache__
