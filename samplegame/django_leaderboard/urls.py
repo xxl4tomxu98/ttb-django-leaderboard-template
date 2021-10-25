@@ -2,11 +2,9 @@ from django.urls import include, path, re_path
 from django.views.generic import RedirectView
 from .views import ScoresView, ScoresAroundMeView, highscores
 
-favicon_view = RedirectView.as_view(url='/static/favicon.ico', permanent=True)
-
 urlpatterns = [
     # Api urls
-    re_path(r'^favicon\.ico$', favicon_view),    
+    re_path(r'^favicon\.ico$', RedirectView.as_view(url='/static/favicon.ico', permanent=True)),    
     path('api/<str:game>/user/<int:user_id>/', ScoresAroundMeView.as_view(), name='leaderboard_around_me_api'),
     path('api/<str:game>/', ScoresView.as_view(), name='leaderboard_api'),
     path('api/<str:game>/<int:page>/', ScoresView.as_view(), name='leaderboard_api_with_page'),
