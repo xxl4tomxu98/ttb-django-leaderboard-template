@@ -1,13 +1,13 @@
-from django.http import HttpResponseRedirect
-from django.conf.urls import include, url
+from django.views.generic import RedirectView
+from django.urls import include, path
 
 urlpatterns = [
     # Redirect to leaderboard
-    url(r'^$', lambda r : HttpResponseRedirect('leaderboard/highscores/sample_game/')),
+    path('', RedirectView.as_view(url='leaderboard/highscores/sample_game/')),
 
     # Leaderboard
-    url(r'^leaderboard/', include('django_leaderboard.urls')),
+    path('leaderboard/', include('django_leaderboard.urls')),
 
     # auth support for rest framework
-    url(r'^restframework', include('rest_framework.urls', namespace='rest_framework'))
+    path('restframework/', include('rest_framework.urls', namespace='rest_framework'))
 ]
