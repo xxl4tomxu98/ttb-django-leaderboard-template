@@ -12,7 +12,7 @@
     <div class="pagination">
         <span class="step-links">
         {% if has_prev %}
-            <a href="{% url leaderboard_high_scores_with_page game=game page=prev_page  %}">previous</a>
+            <a href="{% url 'leaderboard_high_scores_with_page' game=game page=prev_page  %}">previous</a>
         {% endif %}
 
         <span class="current">
@@ -21,11 +21,11 @@
 
         <span class="step-links">
         {% if has_next %}
-            <a href="{% url leaderboard_high_scores_with_page game=game page=next_page  %}">next</a>
+            <a href="{% url 'leaderboard_high_scores_with_page' game=game page=next_page  %}">next</a>
         {% endif %}
         </span>
     </div>
 {% else %}
-No score is submitted yet. <a href="{% url leaderboard_api game=game  %}">Use API to create some</a>
+No score is submitted yet. <a href="{% url 'leaderboard_api' game=game  %}">Use API to create some</a>
 {% endif %}
 {% endwith %}
