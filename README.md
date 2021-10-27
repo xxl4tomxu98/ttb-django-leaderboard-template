@@ -67,9 +67,9 @@ Use following to set up the project
 
 Open `settings.py` file and do the necessary changes (i.e. db settings, etc).
 
-* Add `django_leaderboard` to APPS list in settings.py
-* Make sure that your redis server is running.
-* Add following lines to your urls.py file.
+Add `django_leaderboard` to APPS list in settings.py
+Make sure that your redis server is running.
+Add following lines to your urls.py file.
 
     path('leaderboard/', include('django_leaderboard.urls')),
     path('restframework/', include('rest_framework.urls', namespace='rest_framework')) # auth support for rest framework

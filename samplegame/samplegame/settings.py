@@ -105,8 +105,7 @@ TEMPLATE_LOADERS = (
 #     'django.template.loaders.eggs.Loader',
 )
 
-MIDDLEWARE_CLASSES = (
-    'corsheaders.middleware.CorsMiddleware',
+MIDDLEWARE_CLASSES = (    
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -137,8 +136,7 @@ TEMPLATES = [
     },
 ]  
 
-INSTALLED_APPS = (
-    'corsheaders',
+INSTALLED_APPS = (    
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
