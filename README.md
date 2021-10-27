@@ -71,7 +71,7 @@ Open `settings.py` file and do the necessary changes (i.e. db settings, etc).
 * Make sure that your redis server is running.
 * Add following lines to your urls.py file.
 
-    url(r'^leaderboard/', include('django_leaderboard.urls')),
-    url(r'^restframework', include('djangorestframework.urls', namespace='djangorestframework')) # auth support for rest framework
+    path('leaderboard/', include('django_leaderboard.urls')),
+    path('restframework/', include('rest_framework.urls', namespace='rest_framework')) # auth support for rest framework
 
 Go to `http://localhost:8000/` to use the project. Make sure that you create some users first.
