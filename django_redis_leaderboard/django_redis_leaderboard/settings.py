@@ -115,10 +115,10 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-ROOT_URLCONF = 'samplegame.urls'
+ROOT_URLCONF = 'django_redis_leaderboard.urls'
 
 # Python dotted path to the WSGI application used by Django's runserver.
-WSGI_APPLICATION = 'samplegame.wsgi.application'
+WSGI_APPLICATION = 'django_redis_leaderboard.wsgi.application'
 
 TEMPLATES = [
     {

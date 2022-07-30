@@ -11,3 +11,4 @@ redis==3.5.3
 six==1.16.0
 sqlparse==0.4.2
 URLObject==2.4.3
+python-dotenv==0.19.1
