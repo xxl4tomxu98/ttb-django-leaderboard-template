@@ -1,5 +1,5 @@
 from leaderboard.leaderboard import Leaderboard
-from django_leaderboard.forms import ScoreForm
+from leaderboard_app.forms import ScoreForm
 
 from rest_framework.reverse import reverse
 from rest_framework.views import View
@@ -45,7 +45,7 @@ def highscores(request, game, page=1):
         score_list[user.pk]["user"] = user
 
     return render(request,
-            "django_leaderboard/highscores.html", 
+            "leaderboard_app/highscores.html", 
             {
                 "scores": scores, 
                 "total_pages":total_pages, 
