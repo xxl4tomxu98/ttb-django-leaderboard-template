@@ -39,7 +39,7 @@ Example
 
 There is an example project in the source to make it easy to start.
 
-A sample project to try `django_leaderboard`
+A sample project about game player leaderboard rankings to try `leaderboard_app`
 
 Dependencies
 ------------
@@ -67,11 +67,11 @@ Use following to set up the project
 
 Open `settings.py` file and do the necessary changes (i.e. db settings, etc).
 
-Add `django_leaderboard` to APPS list in settings.py
+Add `leaderboard_app` to APPS list in settings.py
 Make sure that your redis server is running.
 Add following lines to your urls.py file.
 
-    path('leaderboard/', include('django_leaderboard.urls')),
+    path('leaderboard/', include('leaderboard_app.urls')),
     path('restframework/', include('rest_framework.urls', namespace='rest_framework')) # auth support for rest framework
 
 Go to `http://localhost:8000/` to use the project. Make sure that you create some users first.
