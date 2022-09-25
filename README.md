@@ -59,8 +59,7 @@ Use following to set up the project
     source venv/bin/activate
     pip install --upgrade pip
     pip install wheel
-    pip install -r requirements.txt
-    cd ./django_redis_leaderboard
+    pip install -r requirements.txt    
     python manage.py makemigrations
     python manage.py migrate      
     python manage.py runserver     
@@ -75,3 +74,25 @@ Add following lines to your urls.py file.
     path('restframework/', include('rest_framework.urls', namespace='rest_framework')) # auth support for rest framework
 
 Go to `http://localhost:8000/` to use the project. Make sure that you create some users first.
+
+
+Integrating a React.js Pipeline into This Django Application
+============================================================
+
+Webpack setup
+-------------
+    npm init -y
+    npm install webpack webpack-cli --save-dev
+    npm run dev
+
+Connecting webpack bundles to Django
+------------------------------------
+Run Django server
+
+    http://localhost:8000/hello-webpack/
+
+Setting up React with Babel
+---------------------------
+    npm install --save-dev babel-loader @babel/core @babel/preset-env @babel/preset-react
+    npm install --save react react-dom
+    npm run dev
