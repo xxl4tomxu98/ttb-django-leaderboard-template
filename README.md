@@ -76,8 +76,9 @@ Add following lines to your urls.py file.
 
 Go to `http://localhost:8000/` to use the project. Make sure that you create some users first.
 
-Integrating a Raect.js Pipeline into This Django Application
 
+Integrating a React.js Pipeline into This Django Application
+============================================================
 
 Webpack setup
 -------------
