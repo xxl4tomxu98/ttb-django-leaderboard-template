@@ -59,8 +59,7 @@ Use following to set up the project
     source venv/bin/activate
     pip install --upgrade pip
     pip install wheel
-    pip install -r requirements.txt
-    cd ./django_redis_leaderboard
+    pip install -r requirements.txt    
     python manage.py makemigrations
     python manage.py migrate      
     python manage.py runserver     
