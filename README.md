@@ -60,7 +60,7 @@ Use following to set up the project
     pip install --upgrade pip
     pip install wheel
     pip install -r requirements.txt
-    cd ./samplegame
+    cd ./django_redis_leaderboard
     python manage.py makemigrations
     python manage.py migrate      
     python manage.py runserver     
@@ -68,7 +68,7 @@ Use following to set up the project
 Open `settings.py` file and do the necessary changes (i.e. db settings, etc).
 
 Add `leaderboard_app` to APPS list in settings.py
-Make sure that your redis server is running.
+Make sure that your redis server is running, `brew services start redis`
 Add following lines to your urls.py file.
 
     path('leaderboard/', include('leaderboard_app.urls')),
