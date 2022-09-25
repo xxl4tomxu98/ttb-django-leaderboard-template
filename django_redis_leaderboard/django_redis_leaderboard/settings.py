@@ -144,7 +144,7 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'leaderboard_app',
+    'leaderboard_app.app.ApiConfig',
     'rest_framework',
 )
 
