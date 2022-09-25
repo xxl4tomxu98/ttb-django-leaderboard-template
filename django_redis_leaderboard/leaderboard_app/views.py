@@ -91,7 +91,7 @@ class ScoresView(View):
             score: positive integer
 
         Returns:
-            1 on creation, 0 on updation
+            1 on create, 0 on update
         """
         user_id = request.POST.get('user_id')
         score = request.POST.get('score')
